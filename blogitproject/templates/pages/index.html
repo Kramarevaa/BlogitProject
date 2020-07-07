@@ -1,11 +1,17 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>BLOGIT HOME PAGE</title>
-</head>
-<body>
-    <h1>WELCOME TO BLOGIT PROJECT</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}| Home{% endblock title %}
+{% block content %}
+<div class="view_pore boxed-btn3">
+    <div class="col-lg-12">
+        <div class="breadcrumb_iner">
+            <h2>Welcome To BLOGIT Project</h2>
+                {% if user.authenticated %}
+                , {{user.get_full_name}}!
+                {% else %}
+                !
+                {% endif %}
+        </div>
+    </div> 
+</div>                   
+{% endblock content %}

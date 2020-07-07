@@ -1,0 +1,52 @@
+{% load static %}
+<!-- header-start -->
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid ">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'img/logo2.png' %}" alt="" height="100">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{% url 'index' %}">home</a></li>
+                                        <li><a href="#">Create Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Profile</a></li>
+                                        
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <div class="col-12"></div>
+                                    {% if user.is_authenticated %}
+                                    <p class="mr-2">Welcome, {{user.get_username}}!</p>
+                                    <a href="{% url 'logout' %}" class="genric-btn primary radius">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'login' %}" class="genric-btn primary radius">Login</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
